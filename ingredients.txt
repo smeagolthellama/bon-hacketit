@@ -1,0 +1,53 @@
+wheat flour
+corn flour
+oat flour
+barley flour
+rye flour
+salt
+pepper
+paprika
+tumeric
+curry powder
+water
+milk
+soy sauce
+chicken breast
+chicken thighs
+chicken drumsticks
+chicken wings
+turkey breast
+turkey thighs
+turkey drumsticks
+turkey wings
+duck breast
+duck thighs
+duck drumsticks
+duck wings
+pork chop
+stewing pork
+mutton
+stewing mutton
+beef
+stewing beef
+beef steak
+chicken egg
+duck egg
+turkey egg
+goose egg
+fish filet
+fish roe
+broccoli
+cauliflower
+carrot
+potatoes
+rice
+onion
+spring onion
+garlic
+cabbage
+lettuce
+leek
+parsnip
+sugar
+yoghurt
+fruit
