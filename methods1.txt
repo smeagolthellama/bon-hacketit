@@ -1,11 +1,11 @@
 cut
-chop
-peel
-stir
-beat
-crack
-wash
-fry
-bake
-boil
+chopped
+peeled
+stirred
+beaten
+cracked
+washed
+fried
+baked
+boiled
 
