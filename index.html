@@ -1,0 +1,175 @@
+<html>
+
+<head>
+    <title>
+        Front
+    </title>
+    <script src="app.js"></script>
+</head>
+
+<body>
+    <h1>Ingredients</h1>
+    <div id="container"></div>
+    <button id="add1">Add Ingredients</button>
+    <h1>Method1</h1>
+    <div id="container1"></div>
+    <button id="add2">Add Method 1</button>
+    <h1>Method2</h1>
+    <div id="container2"></div>
+    <button id="add3">Add Method 2</button>
+    
+    <button id="final" onclick="FinalMake()">Final 
+    </button>
+    <div id="link"></div>
+
+    <script>
+        const fruits = ['wheat flour',
+            'corn flour',
+            'oat flour',
+            'barley flour',
+            'rye flour',
+            'salt',
+            'pepper',
+            'paprika',
+            'tumeric',
+            'curry powder',
+            'water',
+            'milk',
+            'soy sauce',
+            'chicken breast',
+            'chicken thighs',
+            'chicken drumsticks',
+            'chicken wings',
+            'turkey breast',
+            'turkey thighs',
+            'turkey drumsticks',
+            'turkey wings',
+            'duck breast',
+            'duck thighs',
+            'duck drumsticks',
+            'duck wings',
+            'pork chop',
+            'stewing pork',
+            'mutton',
+            'stewing mutton',
+            'beef',
+            'stewing beef',
+            'beef steak',
+            'chicken egg',
+            'duck egg',
+            'turkey egg',
+            'goose egg',
+            'fish filet',
+            'fish roe',
+            'broccoli',
+            'cauliflower',
+            'carrot',
+            'potatoes',
+            'rice',
+            'onion',
+            'spring onion',
+            'garlic',
+            'cabbage',
+            'lettuce',
+            'leek',
+            'parsnip',
+            'sugar',
+            'yoghurt',
+            'fruit']
+            const $divElem = document.getElementById('container')
+            let checkedBox = []
+            var selected_ing = []
+            var selected_m1 = []
+            var selected_m2 = []
+            fruits.forEach((fruit, index) => {
+            let html = `${fruit} <input type="checkbox" id=${index} name="Ing">`;
+            $divElem.innerHTML += html
+
+        })
+        document.getElementById('add1').onclick = function () {
+            var checkboxes1 = document.getElementsByName('Ing');
+            for (var checkbox1 of checkboxes1) {
+                if (checkbox1.checked)
+                    selected_ing.push(checkbox1.id);
+                    console.log(selected_ing);
+
+            }
+        }
+        const fruits1 = ['cut',
+            'chopped',
+            'peeled',
+            'stirred',
+            'beaten',
+            'cracked',
+            'washed',
+            'fried',
+            'baked',
+            'boiled']
+            const $divElem1 = document.getElementById('container1')
+
+fruits1.forEach((fruit, index) => {
+    let html = `${fruit} <input type="checkbox" id=${index} name="Method1">`;
+    $divElem1.innerHTML += html
+
+})
+document.getElementById('add2').onclick = function () {
+    var checkboxes2 = document.getElementsByName('Method1');
+    for (var checkbox2 of checkboxes2) {
+        if (checkbox2.checked)
+            selected_m1.push(checkbox2.id);
+            console.log(selected_m1);
+
+    }
+}
+            const fruits2 = ['mix',
+            'pour on top',
+            'sprinkle on top',
+            'put into',
+            'add']
+
+        
+        // method 1 started
+       
+
+        // method 2 started
+        const $divElem2 = document.getElementById('container2')
+
+
+        fruits2.forEach((fruit, index) => {
+            let html = `${fruit} <input type="checkbox" id=${index} name="Method2">`;
+            $divElem2.innerHTML += html
+
+        })
+        document.getElementById('add3').onclick = function () {
+            var checkboxes3 = document.getElementsByName('Method2');
+            for (var checkbox3 of checkboxes3) {
+                if (checkbox3.checked)
+                    selected_m2.push(checkbox3.id);
+
+                    console.log(selected_m2);
+            }
+        }
+
+        var url_str = "https://radiant-sierra-73200.herokuapp.com/";
+
+function Finalmake() {
+    selected_ing.forEach(element => {
+        url_str += "i" + element + "%20";
+    });
+    selected_m1.forEach(element => {
+        url_str += "m" + element + "%20";
+    });
+    selected_m2.forEach(element => {
+        url_str += "m" + element + "%20";
+    });
+}
+const $divElem5 = document.getElementById('link')
+
+ let html5 =`<a href=${url_str}>Go to Recipe</a>`
+
+$divElem5.innerHTML += html5
+
+    </script>
+</body>
+
+</html>
