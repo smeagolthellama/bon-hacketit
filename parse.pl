@@ -16,7 +16,6 @@ sub filearr{
 @{$contents{"M"}}=filearr("methods2.txt");
 
 my $streams=0;
-print $string;
 
 while($string =~ /([imM])([0-9]*) /g){
 	print "\n","|" x $streams,"\n";
