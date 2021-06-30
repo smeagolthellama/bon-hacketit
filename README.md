@@ -1,6 +1,8 @@
 # Primordial soup
 hackathon submission inspired by https://xkcd.com/720/
 
+# Pitch for old version, submitted to bon-hacketit (list of changes at the bottom, or in the commit log)
+
 # what it was supposed to do
 
 The original idea was to have multiple recipes offered to the user, who would then give feedback, in some manner which we didn't get around to doing yet.
@@ -69,4 +71,9 @@ baked
 
 No, I do not know how one stirs baked garlic.
 
- 
+# changes made:
+
+ 1) prevent the generator from duplicating ingredients. (adding eggs to eggs doesn't make all that much sense)
+ 2) stop the generator from using the same method twice in a row. (an inelegant sollution, but it works)
+ 3) add a bit more formatting to the output (since I wasn't the one who did the heroku, I couldn't update that version)
+
