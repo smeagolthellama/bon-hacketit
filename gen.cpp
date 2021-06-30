@@ -12,7 +12,7 @@ int main(){
 	std::ifstream m1("methods1.txt");
 	std::ifstream m2("methods2.txt");
 	std::ifstream ingr("ingredients.txt");
-	int m1num,m2num, ingrnum;
+	unsigned int m1num,m2num, ingrnum;
 	m1num=m2num=ingrnum=0;
 	std::string unused;
 	while(std::getline(m1,unused)){
@@ -26,14 +26,19 @@ int main(){
 	}
 	//std::cerr<<m1num<<' '<<m2num<<' '<<ingrnum<<'\n';
 	
-	srand(time(0));
+	unsigned int *ingredient_map=static_cast<unsigned int*>(calloc(sizeof(int),ingrnum));
+	unsigned int last_method1;
+	unsigned int last_method2;
+
+	srand(time(nullptr));
 
 
 
-	int ingredients=rand()%MAX_INGREDIENTS;
+	unsigned int ingredients=rand()%MAX_INGREDIENTS;
+	unsigned int ingredient;
 	//std::cerr<<ingredients;
 
-	int streams=0;
+	unsigned int streams=0;
 	bool ok=1;
 
 	while((ingredients>0 || streams>1) || ok){
@@ -43,7 +48,11 @@ int main(){
 			case 0:
 				//std::cerr<<0;
 				if(ingredients>0){
-					std::cout<<"i"<<rand()%ingrnum<<" ";
+					do{
+						ingredient=(rand()%ingrnum);
+					}while(ingredient_map[ingredient]==1);
+					ingredient_map[ingredient]=1;
+					std::cout<<"i"<<ingredient<<" ";
 					ingredients--;
 					streams++;
 					break;
@@ -53,13 +62,21 @@ int main(){
 			case 2:
 				//std::cerr<<2;
 				if(streams>0){
-					std::cout<<"m"<<rand()%m1num<<' ';
+					unsigned int method=rand()%m1num;
+					while(method==last_method1){
+						method=rand()%m1num;
+					}
+					std::cout<<"m"<<method<<' ';
 					break;
 				}
 			case 3:
 				//std::cerr<<3;
 				if(streams>1){
-					std::cout<<"M"<<rand()%m2num<<' ';
+					unsigned int method=rand()%m2num;
+					while(method==last_method2){
+						method=rand()%m2num;
+					}
+					std::cout<<"M"<<method<<' ';
 					streams--;
 					break;
 				}
