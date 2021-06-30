@@ -1,3 +1,6 @@
+CCFLAGS= -Weverything -Wall -Wextra
+CXX= clang++ $(CCFLAGS)
+
 all: gen recipeQ.txt recipesample.txt
 gen: gen.cpp
 recipeQ.txt: gen
