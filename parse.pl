@@ -18,15 +18,15 @@ sub filearr{
 my $streams=0;
 
 while($string =~ /([imM])([0-9]*) /g){
-	print "\n","|" x $streams,"\n";
+	print "\n","| " x $streams,"\n";
 	if($1eq"i"){
 		$streams++;
-		print "|"x($streams-1);
+		print "| "x($streams-1);
 	}elsif($1eq"M"){
 		$streams--;
-		print "|"x($streams-1),"V";
+		print "| "x($streams-1)," V ";
 	}else{
-		print "|"x($streams-1);
+		print "| "x($streams-1);
 	}
 	chomp $contents{$1}[$2];
 	print $contents{$1}[$2],' ';
